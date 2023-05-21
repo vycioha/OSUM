@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OSUM?</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.6/lottie.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/favicon.ico" type="image/icon" />
+  </head>
+
+  <body>
+    <button id="toggle-history-button" class="toggle-button">&#x2192;</button>
+    <div id="history-bar" class="left-side-bar">
+      <h4>History</h4>
+      <input type="text" id="search-input" placeholder="Search history" />
+      <ul id="history-list"></ul>
+    </div>
+
+    <div class="container py-5">
+      <h2 class="text-center mb-4">
+        Outdated Software - Updates Missing? (OSUM?)
+      </h2>
+      <form id="software-form" class="w-100">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="form-group">
+              <input
+                type="text"
+                id="software-input"
+                class="form-control"
+                placeholder="Enter Software Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div id="cpe-picker" style="display: none">
+        <div class="row mt-5">
+          <div class="col-12">
+            <h4 class="text-center">CPEs</h4>
+            <h6 class="text-left">
+              Pick a suitable CPE from the drop-down list and choose a number of
+              CVEs:
+            </h6>
+            <div class="row">
+              <div class="col-md-11">
+                <select class="form-control" id="cpe-select"></select>
+              </div>
+              <div class="col-md-1">
+                <div class="form-group">
+                  <select id="results-per-page" class="form-control">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-secondary" id="generate-button">
+          Generate a table
+        </button>
+      </div>
+
+      <div class="row mt-5" id="table-container" style="display: none">
+        <div class="col-12">
+          <h4 class="text-center">CVEs</h4>
+          <table class="table table-striped" id="cve-table">
+            <thead>
+              <tr>
+                <th>Software name</th>
+                <th>CVE ID</th>
+                <th>Vulnerability type</th>
+                <th>CVSS Rating</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <button class="btn btn-secondary" id="export-button">
+            Export table as .docx
+          </button>
+          <button class="btn btn-secondary" id="copy-button">
+            Copy to clipboard
+          </button>
+          <button class="btn btn-secondary" id="remember-button">
+            Save to history
+          </button>
+          <button class="btn btn-secondary" id="add-another-button">
+            Add Another
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="loading-animation" class="loading-animation" style="display: none">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
