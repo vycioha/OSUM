@@ -1,3 +1,5 @@
+import { dropdownOptions } from "./dropdownOptions.js"; // adjust the path according to your directory structure
+
 document
   .getElementById("software-form")
   .addEventListener("submit", function (e) {
@@ -30,15 +32,6 @@ document
   });
 
 function generateDescriptionCell(descriptionValue, rowIndex) {
-  // Assuming you have an array of options for the dropdown list called 'dropdownOptions'
-  let dropdownOptions = [
-    "-",
-    "Cross-site Scripting (XSS)",
-    "Prototype Pollution",
-    "SQL Injection",
-    "Buffer Overflow",
-  ];
-
   // Create a select element with options
   let select = document.createElement("select");
   select.classList.add("form-control2");

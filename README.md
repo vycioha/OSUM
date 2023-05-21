@@ -21,3 +21,6 @@ To use this tool, follow these steps:
 4. Select the number of CVEs you want to retrieve.
 5. Click the "Generate a table" button to see the list of known vulnerabilities.
 6. You can export the table as a .docx file, copy the table to the clipboard, or save the search history for future reference.
+
+
+
