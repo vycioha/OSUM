@@ -1,4 +1,4 @@
-# Outdated Software - Updates Missing (OSUM)
+# Outdated Software - Updates Missing (OSUM) 🕊️
 
 OSUM is a web-based tool that helps users to check if their software applications have any known vulnerabilities. It uses the CVE (Common Vulnerabilities and Exposures) database to provide a list of known vulnerabilities for the given software.
 
