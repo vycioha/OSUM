@@ -16,20 +16,39 @@ document
                 let select = document.getElementById("cpe-select");
                 // Remove old options
                 select.innerHTML = "";
-                // Add new options
-                data.forEach((cpe) => {
-                    console.log(cpe);
-                    let option = document.createElement("option");
-                    option.text = cpe.cpeName;
-                    option.value = cpe.cpeName; // Assuming you want to use the CPE name as the value
-                    select.add(option);
-                });
+
+                // Check if data is empty
+                if (data.length === 0) {
+                    // No matching CPEs were found
+                    let errorMessage = document.getElementById("error-message");
+                    errorMessage.textContent = "No matching CPEs were found.";
+                    errorMessage.style.display = "block";
+                    document.getElementById("cpe-picker").style.display = "none";
+                    document.getElementById("table-container").style.display = "none";
+                } else {
+                    // Add new options
+                    data.forEach((cpe) => {
+                        console.log(cpe);
+                        let option = document.createElement("option");
+                        option.text = cpe.cpeName;
+                        option.value = cpe.cpeName; // Assuming you want to use the CPE name as the value
+                        select.add(option);
+                    });
+                    // Hide the error message if previously shown
+                    let errorMessage = document.getElementById("error-message");
+                    errorMessage.style.display = "none";
+                    document.getElementById("cpe-picker").style.display = "block";
+                }
 
                 // Hide the loading message after data is loaded
                 document.getElementById("loading-animation").style.display = "none";
-                document.getElementById("cpe-picker").style.display = "block";
+            })
+            .catch((error) => {
+                // Handle any errors during the fetch operation
+                console.error("Error:", error);
             });
     });
+
 
 function generateDescriptionCell(descriptionValue, rowIndex) {
     // Create a select element with options
@@ -77,7 +96,6 @@ document
 
         document.getElementById("loading-animation").style.display = "block";
 
-        // Call the NVD API with the CPE name, update the CVE table when data returns
         fetch(
                 "https://services.nvd.nist.gov/rest/json/cves/1.0?cpeMatchString=" +
                 cpeId +
@@ -86,18 +104,15 @@ document
             )
             .then((response) => response.json())
             .then((data) => {
-                console.log(data); // Log the data received from the API
+                console.log(data);
 
                 if (data.result.CVE_Items) {
-                    // Check if vulnerabilities exist
                     let tbody = document
                         .getElementById("cve-table")
                         .querySelector("tbody");
 
-                    // Remove old rows
                     tbody.innerHTML = "";
 
-                    // Add new rows
                     data.result.CVE_Items.forEach((item, index) => {
                         let tr = document.createElement("tr");
                         let description = item.cve.description.description_data.find(
@@ -117,12 +132,21 @@ document
                             baseSeverity = item.impact.baseMetricV2.severity;
                             vectorString = item.impact.baseMetricV2.vectorString;
                         }
-                        tr.innerHTML = `<td>${softwareInput}</td><td>${
+                        if (document.getElementById("table-checkbox").checked) {
+                            tr.innerHTML = `<td>${softwareInput}</td><td>${
               item.cve.CVE_data_meta.ID
             }</td><td></td><td>${baseScore} (${
               baseSeverity.charAt(0).toUpperCase() +
               baseSeverity.slice(1).toLowerCase()
             })<br>${vectorString}</td>`;
+                        } else {
+                            tr.innerHTML = `<td>${softwareInput}</td><td>${
+              item.cve.CVE_data_meta.ID
+            }</td><td></td><td>${baseScore} (${
+              baseSeverity.charAt(0).toUpperCase() +
+              baseSeverity.slice(1).toLowerCase()
+            })</td>`;
+                        }
                         let cell = tr.cells[2];
                         cell.appendChild(generateDescriptionCell(description.value, index));
 
@@ -141,7 +165,7 @@ document
                         tr.appendChild(undoButton);
                     });
                 } else {
-                    alert("No vulnerabilities in data");
+                    console.error("No vulnerabilities in data");
                 }
                 document.getElementById("loading-animation").style.display = "none";
                 document.getElementById("table-container").style.display = "block";
@@ -324,3 +348,12 @@ document.querySelector('#darkModeButton').addEventListener('click', function() {
     this.classList.toggle('fas fa-moon');
     this.classList.toggle('fas fa-sun');
 });
+
+function matchVulnerabilityType(description) {
+    for (let type of dropdownOptions) {
+        if (description.toLowerCase().includes(type.toLowerCase())) {
+            return type;
+        }
+    }
+    return "-"; // return "-" as default if no match is found
+}

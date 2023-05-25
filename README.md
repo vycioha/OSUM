@@ -24,3 +24,17 @@ To use this tool, follow these steps:
 
 
 
+TODO
+
+add multiple software seach Functionality and generation
+add vulnerability type guesser
+add last updated messages
+add footer
+fix history button
+split main.js functions to other .js files for easy navigation
+
+DONE
+
+added cvss score string setting in table generation
+added error messages when software is not found
+adde dark mode
