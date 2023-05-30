@@ -58,6 +58,7 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
     // Add a default option that retains the original description value
     let defaultOption = document.createElement("option");
     defaultOption.text = descriptionValue;
+    defaultOption.style.wordBreak = "break-word"; // Add this line
     defaultOption.selected = true; // Set the default option as selected
     select.add(defaultOption);
 
@@ -348,12 +349,3 @@ document.querySelector('#darkModeButton').addEventListener('click', function() {
     this.classList.toggle('fas fa-moon');
     this.classList.toggle('fas fa-sun');
 });
-
-function matchVulnerabilityType(description) {
-    for (let type of dropdownOptions) {
-        if (description.toLowerCase().includes(type.toLowerCase())) {
-            return type;
-        }
-    }
-    return "-"; // return "-" as default if no match is found
-}
