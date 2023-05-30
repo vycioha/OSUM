@@ -19,7 +19,7 @@ def cpe_search():
     for eachCPE in r:
         cpe_data = {
             'cpeName': eachCPE.cpeName,
-        }
+            }
         results.append(cpe_data)
 
     return jsonify(results)
@@ -30,3 +30,4 @@ if __name__ == '__main__':
 
 
 # https://nvdlib.com/en/latest/
+ 

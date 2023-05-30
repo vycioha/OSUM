@@ -11,20 +11,31 @@
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="main.js"></script>
     <link rel="icon" href="/favicon.ico" type="image/icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
   </head>
-
   <body>
+    <!-- Other elements -->
+    <div class="dark-mode-container">
+      <i id="darkModeButton" class="dark-mode-button fas fa-moon"></i>
+    </div>
     <button id="toggle-history-button" class="toggle-button">&#x2192;</button>
     <div id="history-bar" class="left-side-bar">
       <h4>History</h4>
       <input type="text" id="search-input" placeholder="Search history" />
       <ul id="history-list"></ul>
-    </div>
+    </div> 
 
     <div class="container py-5">
-      <h2 class="text-center mb-4">
-        Outdated Software - Updates Missing? (OSUM?)
-      </h2>
+    <h1 class="text-center mb-4">
+    
+    OSUM?
+      </h1>
+      <h5 class="text-center mb-4">
+        Outdated Software • Updates Missing?
+      </h5>
       <form id="software-form" class="w-100">
         <div class="row">
           <div class="col-md-8 offset-md-2">
@@ -41,6 +52,7 @@
               <button type="submit" class="btn btn-primary btn-block">
                 Search
               </button>
+              <div id="error-message" style="display: none; color: red;"></div>
             </div>
           </div>
         </div>
@@ -54,7 +66,7 @@
               CVEs:
             </h6>
             <div class="row">
-              <div class="col-md-11">
+              <div class="col-md-11 ">
                 <select class="form-control" id="cpe-select"></select>
               </div>
               <div class="col-md-1">
@@ -76,8 +88,10 @@
         <button class="btn btn-secondary" id="generate-button">
           Generate a table
         </button>
+        <input type="checkbox" id="table-checkbox">
+          Include CVSS score string
+        </input>
       </div>
-
       <div class="row mt-5" id="table-container" style="display: none">
         <div class="col-12">
           <h4 class="text-center">CVEs</h4>
@@ -111,7 +125,5 @@
       <div class="dot"></div>
       <div class="dot"></div>
     </div>
-
-    <script src="main.js"></script>
   </body>
 </html>
