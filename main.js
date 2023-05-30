@@ -50,6 +50,7 @@ document
     });
 
 
+
 function generateDescriptionCell(descriptionValue, rowIndex) {
     // Create a select element with options
     let select = document.createElement("select");

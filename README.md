@@ -11,7 +11,7 @@ OSUM is a web-based tool that helps users to check if their software application
 - Option to export the vulnerability table as a .docx file.
 - Saves the search history for each session.
 
-## Usage
+## Usage 
 
 To use this tool, follow these steps:
 
