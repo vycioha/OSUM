@@ -35,7 +35,14 @@ Then, you can start the API by running the `nvd-api.py` script:
 ```bash
 python nvd-api.py
 ```
-To use the application itself you should host a local server with pyhton or use 'Live Server' extension by Ritwick Dey in VS Code
+To use the application itself you could host a local server using pyhton 
+```bash
+cd OSUM
+```
+```bash
+python -m http.server
+```
+or f.e use 'Live Server' extension by Ritwick Dey in Visual Studio Code
 
 ## How to Use
 
