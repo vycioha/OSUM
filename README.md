@@ -1,40 +1,101 @@
-# Outdated Software - Updates Missing (OSUM)
+```
 
-OSUM is a web-based tool that helps users to check if their software applications have any known vulnerabilities. It uses the CVE (Common Vulnerabilities and Exposures) database to provide a list of known vulnerabilities for the given software.
+  
+
+```
+
+  
+
+# OSUM - Outdated Software Updates Missing
+
+  
+
+OSUM is a web-based application that assists users in identifying known vulnerabilities in their software applications. It leverages the Common Vulnerabilities and Exposures (CVE) database to provide a comprehensive list of known vulnerabilities for the specified software.
+
+  
 
 ## Features
 
-- Accepts software names.
-- Provides a dropdown list of suitable CPE (Common Platform Enumeration) values for the selected software.
-- Displays the known vulnerabilities in a table with details like CVE ID, Vulnerability type, and CVSS Rating.
-- Functionality to copy the vulnerability table to the clipboard.
-- Option to export the vulnerability table as a .docx file.
-- Saves the search history for each session.
+  
 
-## Usage 
+- Accepts software names and provides relevant Common Platform Enumeration (CPE) values.
 
-To use this tool, follow these steps:
+- Displays known vulnerabilities in a detailed table, including the CVE ID, vulnerability type, and CVSS Rating.
 
-1. Enter the software name(s) in the input field.
+- Allows users to copy the vulnerability table to the clipboard.
+
+- Provides an option to export the vulnerability table as a .docx file.
+
+- Maintains a search history for each session for easy reference.
+
+  
+
+## How to Use
+
+  
+
+1. Input the name of the software in the provided field.
+
 2. Click the "Search" button.
-3. From the dropdown list of CPEs, select the suitable CPE for your software.
-4. Select the number of CVEs you want to retrieve.
-5. Click the "Generate a table" button to see the list of known vulnerabilities.
-6. You can export the table as a .docx file, copy the table to the clipboard, or save the search history for future reference.
 
+3. From the dropdown list of CPEs, select the one that matches your software.
 
+4. Specify the number of CVEs you wish to retrieve.
 
-TODO
+5. Click the "Generate a table" button to view the list of known vulnerabilities.
 
-add multiple software seach Functionality and generation
-add vulnerability type guesser
-add last updated messages
-add footer
-fix history button
-split main.js functions to other .js files for easy navigation
+6. You can then export the table as a .docx file, copy the table to the clipboard, or save the search history for future reference.
 
-DONE
+  
 
-added cvss score string setting in table generation
-added error messages when software is not found
-adde dark mode
+## Future Enhancements
+
+  
+
+- Add functionality for searching multiple software and generating corresponding results.
+
+- Implement a vulnerability type guesser.
+
+- Display last updated messages.
+
+- Add a footer to the application.
+
+- Improve code organization by splitting main.js functions into separate .js files for easy navigation.
+
+  
+
+## Completed Tasks
+
+  
+
+- Added CVSS score string setting in table generation.
+
+- Implemented error messages when software is not found.
+
+- Added dark mode for better user experience.
+
+  
+
+## Getting Started
+
+To start using the OSUM tool, clone the repository and install the necessary dependencies using the following commands:
+
+```bash
+git clone https://github.com/vycioha/OSUM.git
+```
+```bash
+cd OSUM
+```
+```bash
+pip install -r requirements.txt
+```
+
+Then, you can start the application by running the `nvd-api.py` script:
+
+```bash
+python nvd-api.py
+```
+
+  
+
+Open your web browser and navigate to the local server address displayed in your terminal to start using OSUM.

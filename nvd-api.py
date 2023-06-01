@@ -4,6 +4,7 @@ from flask_cors import CORS
 from termcolor import colored
 import colorama
 colorama.init()
+from art import text2art
 
 app = Flask(__name__)
 CORS(app)  # Apply CORS to your app

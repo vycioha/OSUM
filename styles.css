@@ -486,3 +486,7 @@ body.dark-mode select:focus {
 
 
 /* } */
+
+body {
+    background-color: #c7c7c7;
+}
