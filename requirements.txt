@@ -1,0 +1,5 @@
+Flask==2.0.2
+nvdlib==0.2.3
+Flask-Cors==3.0.10
+termcolor==1.1.0
+colorama==0.4.4
