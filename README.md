@@ -51,7 +51,7 @@ To use the application itself you should host a local server with pyhton or use 
 
 6. You can then export the table as a .docx file, copy the table to the clipboard, or save the search history for future reference.
 
-## Future Enhancements
+## TODO'S
 
 - Add functionality for searching multiple software and generating corresponding results.
 
@@ -63,7 +63,7 @@ To use the application itself you should host a local server with pyhton or use 
 
 - Improve code organization by splitting main.js functions into separate .js files for easy navigation.
 
-## Completed Tasks
+## Latest Updates
 
 - Added CVSS score string setting in table generation.
 
