@@ -1,22 +1,8 @@
-```
-
-  
-
-```
-
-  
-
 # OSUM - Outdated Software Updates Missing
-
-  
 
 OSUM is a web-based application that assists users in identifying known vulnerabilities in their software applications. It leverages the Common Vulnerabilities and Exposures (CVE) database to provide a comprehensive list of known vulnerabilities for the specified software.
 
-  
-
 ## Features
-
-  
 
 - Accepts software names and provides relevant Common Platform Enumeration (CPE) values.
 
@@ -28,11 +14,30 @@ OSUM is a web-based application that assists users in identifying known vulnerab
 
 - Maintains a search history for each session for easy reference.
 
-  
+## Getting Started
+
+To start using the OSUM tool, clone the repository and install the necessary dependencies using the following commands:
+
+```bash
+git clone https://github.com/vycioha/OSUM.git
+```
+
+```bash
+cd OSUM
+```
+
+```bash
+pip install -r requirements.txt
+```
+
+Then, you can start the API by running the `nvd-api.py` script:
+
+```bash
+python nvd-api.py
+```
+To use the application itself you should host a local server with pyhton or use 'Live Server' extension by Ritwick Dey in VS Code
 
 ## How to Use
-
-  
 
 1. Input the name of the software in the provided field.
 
@@ -46,11 +51,7 @@ OSUM is a web-based application that assists users in identifying known vulnerab
 
 6. You can then export the table as a .docx file, copy the table to the clipboard, or save the search history for future reference.
 
-  
-
 ## Future Enhancements
-
-  
 
 - Add functionality for searching multiple software and generating corresponding results.
 
@@ -62,11 +63,7 @@ OSUM is a web-based application that assists users in identifying known vulnerab
 
 - Improve code organization by splitting main.js functions into separate .js files for easy navigation.
 
-  
-
 ## Completed Tasks
-
-  
 
 - Added CVSS score string setting in table generation.
 
@@ -74,28 +71,3 @@ OSUM is a web-based application that assists users in identifying known vulnerab
 
 - Added dark mode for better user experience.
 
-  
-
-## Getting Started
-
-To start using the OSUM tool, clone the repository and install the necessary dependencies using the following commands:
-
-```bash
-git clone https://github.com/vycioha/OSUM.git
-```
-```bash
-cd OSUM
-```
-```bash
-pip install -r requirements.txt
-```
-
-Then, you can start the application by running the `nvd-api.py` script:
-
-```bash
-python nvd-api.py
-```
-
-  
-
-Open your web browser and navigate to the local server address displayed in your terminal to start using OSUM.
