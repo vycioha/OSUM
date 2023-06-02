@@ -70,8 +70,6 @@ or f.e use 'Live Server' extension by Ritwick Dey in Visual Studio Code
 
 - Add a footer to the application.
 
-- Improve code organization by splitting main.js functions into separate .js files for easy navigation.
-
 ## Latest Updates
 
 - Added CVSS score string setting in table generation.
@@ -79,4 +77,6 @@ or f.e use 'Live Server' extension by Ritwick Dey in Visual Studio Code
 - Implemented error messages when software is not found.
 
 - Added dark mode for better user experience.
+
+- Improved code organization by splitting main.js functions into separate .js files for easy navigation.
 
