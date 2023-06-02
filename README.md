@@ -42,7 +42,7 @@ cd OSUM
 ```bash
 python -m http.server
 ```
-or f.e use 'Live Server' extension by Ritwick Dey in Visual Studio Code
+or f.e use the 'Live Server' extension by Ritwick Dey in Visual Studio Code
 
 ## How to Use
 
