@@ -60,6 +60,8 @@ or f.e use 'Live Server' extension by Ritwick Dey in Visual Studio Code
 
 ## TODO'S
 
+- Fix export feature
+
 - Add functionality for searching multiple software and generating corresponding results.
 
 - Implement a vulnerability type guesser.
