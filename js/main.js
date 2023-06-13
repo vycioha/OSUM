@@ -40,4 +40,12 @@ document.addEventListener("DOMContentLoaded", function() {
         // Update the history bar
         updateHistoryBar();
     });
+
+    // Add event listener to adjust iframe size
+    var iframes = document.querySelectorAll('iframe');
+    for (var i = 0; i < iframes.length; i++) {
+        iframes[i].addEventListener('load', function() {
+            this.style.height = this.contentWindow.document.body.scrollHeight + 'px';
+        });
+    }
 });

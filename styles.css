@@ -302,7 +302,7 @@ td:nth-child(5) {
     width: 20rem;
     /* Adjust the width of the sidebar as needed */
     height: 100%;
-    background-color: #0780803d;
+    background-color: #d1d1d1da;
     transition: left 0.2s ease;
     z-index: 999;
     overflow-y: auto;
@@ -322,11 +322,22 @@ body #iframe-modal {
     transform: translate(-50%, -50%);
     border: none;
     z-index: 1000;
-    overflow: hidden;
-    width: fit-content;
+    overflow: auto;
+    /* Add scrollbars when the content is larger than the modal */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 1px;
+    /* Make the iframe responsive */
+    min-width: 50%;
+    /* Ensure it takes up at least the full width of its container */
+    max-width: 50%;
+    /* Hack to overcome an issue in iOS where iframes don't scale down correctly */
+    max-height: 50%;
+    /* Limit the height of the modal to 80% of the viewport height */
+    min-height: 0%;
+    height: 1px;
+    border-radius: 10px;
 }
 
 #modal-backdrop {
@@ -488,5 +499,5 @@ body.dark-mode select:focus {
 /* } */
 
 body {
-    background-color: #c7c7c7;
+    background-color: #dadada;
 }
