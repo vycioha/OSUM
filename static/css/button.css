@@ -1,0 +1,65 @@
+/* buttons */
+
+.btn {
+    background-color: #078080;
+    margin: 10px;
+    width: auto;
+    border: 10px #9920df !important;
+}
+
+.btn:hover {
+    background-color: #0a9b9b;
+    margin: 10px;
+    font-size: 16px;
+    scale: 1.05;
+    transition: all 0.1s ease-in-out;
+}
+
+#table-container {
+    position: relative;
+    z-index: 1;
+    /* Set a higher z-index value for the table container */
+}
+
+.undo-button {
+    background-color: rgb(255, 255, 255);
+    color: #f45d48;
+    /* Changes the text color to white */
+    border: none;
+    padding: 0px;
+    /* Adds padding around the text */
+    cursor: pointer;
+    /* Changes the cursor to a hand when hovering over the button */
+    font-weight: bold;
+    font-size: 14px;
+    /* Changes the font size */
+    box-shadow: none !important;
+    height: 50px;
+    width: 0px;
+    position: absolute;
+    right: 10px;
+}
+
+.undo-button::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+}
+
+.undo-button:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: #f45d48;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 16px;
+    box-shadow: none !important;
+    height: 50px;
+    transition: all 0.05s ease-in-out 0.05s;
+    right: 0px;
+    scale: 1.05;
+}

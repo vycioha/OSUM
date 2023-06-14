@@ -1,0 +1,62 @@
+.loading-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10%;
+    left: 90%;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0);
+    /* Optional: Add a semi-transparent background */
+    z-index: 9999;
+    transform-style: preserve-3d;
+    /* Add this property for 3D transformations */
+}
+
+
+/* loading animation */
+
+.loading-container {
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+    /* Rotate the animation 90 degrees */
+}
+
+.dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #078080;
+    margin: 0 4px;
+    animation: wave 1.5s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+    background-color: #078080cc;
+    animation-delay: -1.2s;
+}
+
+.dot:nth-child(3) {
+    background-color: #07808096;
+    animation-delay: -0.9s;
+}
+
+.dot:nth-child(4) {
+    background-color: #07808060;
+    animation-delay: -0.6s;
+}
+
+@keyframes wave {
+    0%,
+    40%,
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    20% {
+        opacity: 0.3;
+        transform: translateY(-10px);
+    }
+}

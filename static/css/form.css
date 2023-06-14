@@ -1,0 +1,15 @@
+.form-control2 {
+    height: auto;
+    width: 600px;
+    column-width: 300px;
+    border-radius: 0px;
+    border: 1px solid #747474;
+    padding: 0px;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    align-content: center;
+    justify-items: center;
+    word-wrap: normal;
+}

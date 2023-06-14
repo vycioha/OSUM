@@ -1,0 +1,31 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    background-color: #222222e8;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    white-space: wrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border: 1px solid #1f1f1f;
+    /* Add border color here */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(100% + 0px);
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    width: 1000px;
+    height: fit-content;
+}

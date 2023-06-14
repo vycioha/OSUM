@@ -1,0 +1,58 @@
+/* General table properties */
+
+table {
+    border: 2px solid rgb(168, 168, 168);
+    text-align: center;
+    font-size: 14px;
+    font-family: Tahoma;
+    justify-content: left;
+    border-collapse: collapse;
+    z-index: -1;
+}
+
+
+/* Rows */
+
+td {
+    border: 2px solid rgb(168, 168, 168);
+    background-color: #ffffff;
+    width: 100%;
+}
+
+
+/* Header */
+
+th {
+    background-color: #cccccc;
+    font-weight: bold;
+    border: 2px solid rgb(168, 168, 168);
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 20%;
+    /* Software name */
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 20%;
+    /* CVE ID */
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 40%;
+    /* Vulnerability type */
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 20%;
+    /* CVSS Rating */
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    background-color: #bb2e2e;
+}

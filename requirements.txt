@@ -4,3 +4,5 @@ Flask-Cors
 termcolor
 colorama
 art
+# webbrowser
+# threading

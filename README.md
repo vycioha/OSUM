@@ -30,20 +30,11 @@ cd OSUM
 pip install -r requirements.txt
 ```
 
-Then, you can start the API by running the `nvd-api.py` script:
+Then, you can start the application by running the `run.py` script:
 
 ```bash
-python nvd-api.py
+python run.py
 ```
-To use the application itself you could host a local server using pyhton 
-```bash
-cd OSUM
-```
-```bash
-python -m http.server
-```
-or f.e use the 'Live Server' extension by Ritwick Dey in Visual Studio Code
-
 ## How to Use
 
 1. Input the name of the software in the provided field.
@@ -78,5 +69,5 @@ or f.e use the 'Live Server' extension by Ritwick Dey in Visual Studio Code
 
 - Added dark mode for better user experience.
 
-- Improved code organization by splitting main.js functions into separate .js files for easy navigation.
+- Improved code organization by splitting main.js and styles.css into separate .js/.css files for easy navigation.
 

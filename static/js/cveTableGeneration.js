@@ -84,6 +84,10 @@ document
 
 
 function generateDescriptionCell(descriptionValue, rowIndex) {
+    // Create a container element for the tooltip
+    let tooltipContainer = document.createElement("div");
+    tooltipContainer.classList.add("tooltip-container");
+
     // Create a select element with options
     let select = document.createElement("select");
     select.classList.add("form-control2");
@@ -91,8 +95,8 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
     // Add a default option that retains the original description value
     let defaultOption = document.createElement("option");
     defaultOption.text = descriptionValue;
-    defaultOption.style.wordBreak = "break-word"; // Add this line
-    defaultOption.selected = true; // Set the default option as selected
+    defaultOption.style.wordBreak = "break-word";
+    defaultOption.selected = true;
     select.add(defaultOption);
 
     // Add other options from the dropdownOptions array
@@ -101,6 +105,9 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
         option.text = optionText;
         select.add(option);
     });
+
+    // Set the description value as a data attribute
+    select.setAttribute("data-tooltip", descriptionValue);
 
     // Add event listener to the select element to update the description value
     select.addEventListener("change", function() {
@@ -116,7 +123,25 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
         }
     });
 
-    // Return the HTML markup for the select element
-    return select;
+    // Append the select element to the tooltip container
+    tooltipContainer.appendChild(select);
+
+    // Create a tooltip element
+    let tooltip = document.createElement("div");
+    tooltip.classList.add("tooltip");
+    tooltip.textContent = descriptionValue;
+    tooltipContainer.appendChild(tooltip);
+
+    // Add event listeners to show and hide the tooltip
+    tooltipContainer.addEventListener("mouseenter", function() {
+        tooltip.style.visibility = "visible";
+    });
+
+    tooltipContainer.addEventListener("mouseleave", function() {
+        tooltip.style.visibility = "hidden";
+    });
+
+    // Return the HTML markup for the tooltip container
+    return tooltipContainer;
 }
 let undoStack = {};

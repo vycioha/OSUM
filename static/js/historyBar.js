@@ -41,7 +41,7 @@ function updateHistoryBar() {
                     }
                     doc.open();
                     doc.write(
-                        '<html><head><title>Table</title><link rel="stylesheet" href="styles.css"></head><body style="display: flex; justify-content: center; align-items: center;">' +
+                        '<html><head><title>Table</title><link rel="stylesheet" href="/static/css/styles.css"></head><body style="display: flex; justify-content: center; align-items: center;">' +
                         entry.table
                     );
                     doc.close();

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         newDoc.document.write(`
             <html>
                 <head>
-                    <link rel="stylesheet" href="styles.css">
+                    <link rel="stylesheet" href="/static/css/styles.css">
                     <style>
                         body {
                             display: flex;

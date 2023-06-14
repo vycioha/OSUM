@@ -1,0 +1,126 @@
+/* Styles when in dark mode */
+
+.dark-mode-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+body.dark-mode .btn {
+    color: #001e1d;
+    font-weight: bold;
+}
+
+body.dark-mode .dark-mode-button {
+    color: #f9bc60;
+    /* Set the color in dark mode */
+}
+
+body.dark-mode .page-container {
+    background-color: #004643;
+    color: #abd1c6;
+}
+
+body.dark-mode table {
+    border-color: #767676;
+    color: #ffffff;
+}
+
+body.dark-mode td {
+    border-color: #4d4d4d;
+    background-color: #666666;
+    color: #ffffff;
+}
+
+body.dark-mode th {
+    background-color: #3d3d3d;
+    border-color: #767676;
+    color: #ffffff;
+}
+
+body.dark-mode .form-control2 {
+    border-color: #666666;
+    background-color: #4d4d4d94;
+    color: #ffffff;
+}
+
+body.dark-mode .btn {
+    background-color: #f9bc60;
+    border-color: #001e1d;
+}
+
+body.dark-mode .undo-button {
+    background-color: #ffffff00;
+    color: #e16162;
+}
+
+body.dark-mode .loading-animation {
+    background-color: #4a4a4a00;
+}
+
+body.dark-mode .dot {
+    background-color: #f9bc60;
+}
+
+body.dark-mode .dot:nth-child(2) {
+    background-color: #f9bc60d0;
+}
+
+body.dark-mode .dot:nth-child(3) {
+    background-color: #f9bc608e;
+}
+
+body.dark-mode .dot:nth-child(4) {
+    background-color: #f9bc605d;
+}
+
+body.dark-mode .left-side-bar {
+    background-color: #f9bc60;
+}
+
+body.dark-mode #history-bar h4 {
+    color: #abd1c6;
+}
+
+body.dark-mode #history-list li {
+    border-color: #c0c0c0;
+}
+
+body.dark-mode #history-list li:hover {
+    background-color: #f9bc6044;
+    color: #ffffff;
+    font-weight: bolder;
+    transition: all 0.1s ease-in-out;
+}
+
+body.dark-mode #toggle-history-button {
+    background-color: #f9bc60;
+    color: #004643;
+    text-align: right;
+}
+
+body.dark-mode .left-side-bar {
+    background-color: #013634;
+    color: #abd1c6;
+}
+
+body.dark-mode .history-date {
+    color: #abd1c6;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+    background-color: #282828;
+    color: #ffffff;
+}
+
+body.dark-mode input::placeholder {
+    color: #777;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus {
+    background-color: #282828;
+    color: #ffffff;
+}

@@ -1,0 +1,10 @@
+@import "table.css";
+@import "form.css";
+@import "button.css";
+@import "loading.css";
+@import "history.css";
+@import "darkmode.css";
+@import "tooltip.css";
+body {
+    background-color: #dadada;
+}
