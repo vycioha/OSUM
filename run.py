@@ -8,7 +8,6 @@ from art import text2art
 # import webbrowser
 # from threading import Timer
 
-
 colorama.init()
 
 app = Flask(__name__)

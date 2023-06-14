@@ -1,7 +1,6 @@
 import './formSubmission.js';
 import './cveTableGeneration.js';
 import './historyBar.js';
-import './exportAndCopy.js';
 import './darkModeToggle.js';
 
 document.addEventListener("DOMContentLoaded", function() {
