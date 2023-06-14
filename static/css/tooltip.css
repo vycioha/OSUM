@@ -10,12 +10,12 @@
     z-index: 1;
     background-color: #222222e8;
     color: #ffffff;
-    padding: 5px;
+    padding: 10px;
     border-radius: 4px;
     font-size: 16px;
     white-space: wrap;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.6s;
     border: 1px solid #1f1f1f;
     /* Add border color here */
     left: 50%;

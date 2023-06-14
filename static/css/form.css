@@ -1,7 +1,7 @@
 .form-control2 {
     height: auto;
-    width: 600px;
-    column-width: 300px;
+    width: 600px; /* Adjust the initial width value as desired */
+    max-width: 600px; /* Adjust the maximum width value as desired */
     border-radius: 0px;
     border: 1px solid #747474;
     padding: 0px;
@@ -12,4 +12,7 @@
     align-content: center;
     justify-items: center;
     word-wrap: normal;
-}
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
