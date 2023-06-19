@@ -13,7 +13,7 @@ document.getElementById("generate-button").addEventListener("click", function ()
     tbody.innerHTML = "";
   }
 
-  document.getElementById("loading-animation").style.display = "block";
+  document.getElementById("loading-animations").style.display = "block";
 
   fetch("https://services.nvd.nist.gov/rest/json/cves/1.0?cpeMatchString=" + cpeId + resultsPerPageQuery)
     .then((response) => response.json())
@@ -83,7 +83,7 @@ document.getElementById("generate-button").addEventListener("click", function ()
 
       
 
-      document.getElementById("loading-animation").style.display = "none";
+      document.getElementById("loading-animations").style.display = "none";
       document.getElementById("table-container").style.display = "block";
     });
 });
@@ -151,16 +151,23 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
   tempDiv.textContent = descriptionValue;
   let htmlEntitiesDescription = tempDiv.innerHTML;
 
-  // Identify phrases or formations from optionsAndAliases that are in the descriptionValue
-  const highlightedDescription = optionsAndAliases.reduce((acc, option) => {
-    const escapedOption = escapeRegExp(option);
-    // This regular expression will now match the option text even if it is immediately before/after punctuation.
-    const optionRegex = new RegExp(`(^|\\W)(${escapedOption})(\\W|$)`, "gi");
-    return acc.replace(
-      optionRegex,
-      `$1<span class="highlighted-option" data-option="${option}">$2</span>$3`
-    );
-  }, htmlEntitiesDescription);
+// Identify phrases or formations from optionsAndAliases that are in the descriptionValue
+const highlightedDescription = optionsAndAliases.reduce((acc, option) => {
+  const escapedOption = escapeRegExp(option);
+  // This regular expression will now match the option text even if it is immediately before/after punctuation.
+  const optionRegex = new RegExp(`(^|\\W)(${escapedOption})(\\W|$)`, "gi");
+
+  // Create a temporary div to convert the selectedOption to HTML entities
+  let tempDiv = document.createElement("div");
+  tempDiv.textContent = option;
+  let htmlEntitiesOption = tempDiv.innerHTML;
+
+  return acc.replace(
+    optionRegex,
+    `$1<span class="highlighted-option" data-option="${htmlEntitiesOption}">$2</span>$3`
+  );
+}, htmlEntitiesDescription);
+
 
   tooltip.innerHTML = highlightedDescription;
 
@@ -175,20 +182,22 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
     tooltip.style.visibility = "hidden";
   });
 
-  // Add event listener to change cell value when a highlighted option is clicked
-  tooltipContainer.addEventListener("click", function (e) {
-    if (e.target.classList.contains("highlighted-option")) {
-      let selectedOption = e.target.getAttribute("data-option");
+// Add event listener to change cell value when a highlighted option is clicked
+tooltipContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("highlighted-option")) {
+    let selectedOption = e.target.getAttribute("data-option");
 
-      // Check if selected option is an alias
-      if (aliases.hasOwnProperty(selectedOption)) {
-        selectedOption = aliases[selectedOption];
-      }
-
-      select.value = selectedOption;
-      select.dispatchEvent(new Event("change"));
+    // Check if selected option is not part of the dropdown options and is an alias
+    if (!dropdownOptions.includes(selectedOption) && aliases.hasOwnProperty(selectedOption)) {
+      selectedOption = aliases[selectedOption];
     }
-  });
+
+    select.value = selectedOption;
+    select.dispatchEvent(new Event("change"));
+  }
+});
+
+
 
   // Return the HTML markup for the tooltip container
   return tooltipContainer;

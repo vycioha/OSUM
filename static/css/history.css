@@ -53,18 +53,21 @@
 
 #toggle-history-button {
     position: fixed;
-    top: 3%;
-    left: 0;
+    top: 1.5%;
+    left: 0%;
     transform: translateY(-50%);
     z-index: 100000;
-    background-color: #078080;
-    color: #343a40;
+    background-color: #07808000;
+    color: #000000;
     border: none;
     padding: 8px;
-    font-size: 18pt;
+    font-size: 12pt;
     cursor: pointer;
-    font-weight: bolder;
     border-radius: 4px;
+}
+#toggle-history-button:hover {
+    background-color: #054d4d00;
+    font-size: 14pt;
 }
 
 

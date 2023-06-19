@@ -17,9 +17,22 @@ body.dark-mode .btn {
     width: auto;
 }
 
+.dark-mode-button {
+    color: #131313;
+    font-size: 18px;
+}
+
+.dark-mode-button:hover {
+    font-size: 20px;
+}
+
 body.dark-mode .dark-mode-button {
     color: #dfb718;
     font-size: 18px;
+}
+
+body.dark-mode .dark-mode-button:hover {
+        font-size: 20px;
 }
 
 body.dark-mode .page-container {
@@ -79,30 +92,6 @@ body.dark-mode .undo-button {
     right: 10px;
 }
 
-body.dark-mode .loading-animation {
-    background-color: #3e3e3e00;
-}
-
-body.dark-mode .dot {
-    background-color: #507d7a;
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 4px;
-}
-
-body.dark-mode .dot:nth-child(2) {
-    background-color: #507d7abf;
-}
-
-body.dark-mode .dot:nth-child(3) {
-    background-color: #507d7a8e;
-}
-
-body.dark-mode .dot:nth-child(4) {
-    background-color: #507d7a5d;
-}
 
 body.dark-mode .left-side-bar {
     background-color: #507d7a;
@@ -131,12 +120,17 @@ body.dark-mode #history-list li:hover {
 }
 
 body.dark-mode #toggle-history-button {
-    background-color: #507d7a;
-    color: #0f2a28;
+    background-color: #507d7a00;
+    color: #8cb4ab;
     text-align: right;
     padding: 8px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+body.dark-mode #toggle-history-button:hover {
+    background-color: #054d4d00;
+    font-size: 14pt;
 }
 
 body.dark-mode .left-side-bar {
