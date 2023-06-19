@@ -5,6 +5,27 @@
 @import "history.css";
 @import "darkmode.css";
 @import "tooltip.css";
+
 body {
     background-color: #dadada;
+}
+
+body input#search-input {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    outline: none;
+    margin-left: 15%;
+}
+
+body input#search-input::placeholder {
+    color: #414141;
+}
+
+body input#search-input:focus {
+    background-color: #f0f0f0;
+    color: #333;
+    outline: none;
 }

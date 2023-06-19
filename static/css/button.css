@@ -1,17 +1,23 @@
 /* buttons */
 
 .btn {
-    background-color: #078080;
-    margin: 10px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #0a9b9b;
+    border-color: #708b8a;
+    padding: 8px 12px;
+    border-radius: 4px;
     width: auto;
-    border: 10px #9920df !important;
 }
 
 .btn:hover {
-    background-color: #0a9b9b;
-    margin: 10px;
-    font-size: 16px;
-    scale: 1.05;
+    color: #fff;
+    font-weight: bold;
+    background-color: #086464;
+    border-color: #708b8a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    width: auto;
     transition: all 0.1s ease-in-out;
 }
 

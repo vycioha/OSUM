@@ -44,5 +44,7 @@ document
             .catch((error) => {
                 // Handle any errors during the fetch operation
                 console.error("Error:", error);
+                
+                document.getElementById("loading-animation").style.display = "none";
             });
-    });
+        });

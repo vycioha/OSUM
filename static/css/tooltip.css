@@ -8,7 +8,7 @@
     visibility: hidden;
     position: absolute;
     z-index: 1;
-    background-color: #222222e8;
+    background-color: #222222;
     color: #ffffff;
     padding: 10px;
     border-radius: 4px;
@@ -23,9 +23,36 @@
     bottom: calc(100% + 0px);
 }
 
+.tooltip:hover {
+    border: 1px solid #c7c7c7;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
+}
+
+
 .tooltip-container:hover .tooltip {
     visibility: visible;
     opacity: 1;
     width: 1000px;
     height: fit-content;
 }
+
+.highlighted-option {
+    color: rgb(32, 32, 32);
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #90ac44; /* Light grey background */
+    border: 1px solid #566827; /* Blue border */
+    padding: 2px 6px; /* Padding to give it some space */
+    border-radius: 5px; /* Rounded corners */
+    margin: 2px; /* Some margin to avoid them sticking together */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.highlighted-option:hover {
+    background-color: rgb(205, 228, 148);
+    color: rgb(19, 19, 19);
+}
+
+
+
