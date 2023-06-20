@@ -17,10 +17,17 @@ document
 
                 // Check if data is empty
                 if (data.length === 0) {
-                    // No matching CPEs were found
                     let errorMessage = document.getElementById("error-message");
-                    errorMessage.textContent = "No matching CPEs were found.";
+                    errorMessage.textContent = "Oops! No matching CPEs were found.";
                     errorMessage.style.display = "block";
+                    errorMessage.style.fontSize = "2em";
+                    errorMessage.style.fontWeight = "bold";
+                    errorMessage.style.color = "#FF6347";
+                    errorMessage.style.textAlign = "center";
+                    errorMessage.style.paddingTop = "20px";
+                    errorMessage.style.transition = "all 2s";
+
+                    // Hide other elements
                     document.getElementById("cpe-picker").style.display = "none";
                     document.getElementById("table-container").style.display = "none";
                 } else {

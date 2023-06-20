@@ -41,7 +41,7 @@
     color: rgb(32, 32, 32);
     cursor: pointer;
     text-decoration: none;
-    background-color: rgb(48, 107, 134);
+    background-color: rgb(174, 204, 63);
     /* Light grey background */
     border: 1px solid #000000;
     /* Blue border */
@@ -56,6 +56,6 @@
 }
 
 .highlighted-option:hover {
-    background-color: rgb(148, 203, 228);
+    background-color: rgb(211, 238, 116);
     color: rgb(19, 19, 19);
 }

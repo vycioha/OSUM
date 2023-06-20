@@ -146,6 +146,10 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
     // Combine dropdownOptions and aliases
     const optionsAndAliases = dropdownOptions.concat(Object.keys(aliases)).sort((a, b) => b.length - a.length);
 
+    // Filter out "-" from optionsAndAliases
+    const filteredOptionsAndAliases = optionsAndAliases.filter(option => option !== "-");
+
+
     // Create a container element for the tooltip
     let tooltipContainer = document.createElement("div");
     tooltipContainer.classList.add("tooltip-container");
@@ -200,7 +204,7 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
     // Identify phrases or formations from optionsAndAliases that are in the descriptionValue
     const replacements = {};
     let index = 0;
-    let highlightedDescription = optionsAndAliases.reduce((acc, option) => {
+    let highlightedDescription = filteredOptionsAndAliases.reduce((acc, option) => {
         const escapedOption = escapeRegExp(option);
         const optionRegex = new RegExp(`(^|\\W)(${escapedOption})(\\W|$)`, "gi");
 
@@ -211,6 +215,7 @@ function generateDescriptionCell(descriptionValue, rowIndex) {
             return `${p1}${placeholder}${p3}`;
         });
     }, htmlEntitiesDescription);
+
 
     // Replace placeholders with the actual highlighted options
     Object.entries(replacements).forEach(([placeholder, replacement]) => {
