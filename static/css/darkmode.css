@@ -38,20 +38,6 @@ body.dark-mode .btn:hover {
 
 .dark-mode-button:hover {
     font-size: 20px;
-    background-color: #507d7a;
-    border-color: #507d7a;
-    padding: 8px 12px;
-    border-radius: 4px;
-    width: auto;
-}
-
-.dark-mode-button {
-    color: #131313;
-    font-size: 18px;
-}
-
-.dark-mode-button:hover {
-    font-size: 20px;
 }
 
 body.dark-mode .dark-mode-button {
@@ -66,20 +52,9 @@ body.dark-mode .dark-mode-button:hover {
 body.dark-mode .page-container {
     background-color: #0f2a28;
     color: #8cb4ab;
-    background-color: #0f2a28;
-    color: #8cb4ab;
 }
 
 body.dark-mode table {
-    border-color: #565656;
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-    font-family: Tahoma;
-    justify-content: left;
-    border-collapse: collapse;
-    z-index: -1;
     border-color: #565656;
     background-color: #222;
     color: #fff;
@@ -101,17 +76,9 @@ body.dark-mode th {
     background-color: #1f1f1f;
     border-color: #565656;
     color: #fff;
-    background-color: #1f1f1f;
-    border-color: #565656;
-    color: #fff;
 }
 
 body.dark-mode .form-control2 {
-    border-color: #333;
-    background-color: #292929;
-    color: #fff;
-    padding: 8px;
-    border-radius: 4px;
     border-color: #333;
     background-color: #292929;
     color: #fff;
@@ -142,24 +109,14 @@ body.dark-mode .left-side-bar {
     background-color: #507d7a;
     color: #8cb4ab;
     padding: 16px;
-    background-color: #507d7a;
-    color: #8cb4ab;
-    padding: 16px;
 }
 
 body.dark-mode #history-bar h4 {
     color: #8cb4ab;
     font-size: 18px;
-    color: #8cb4ab;
-    font-size: 18px;
 }
 
 body.dark-mode #history-list li {
-    border-color: #757575;
-    background-color: #507d7a22;
-    padding: 8px;
-    border-radius: 4px;
-    margin-bottom: 8px;
     border-color: #757575;
     background-color: #507d7a22;
     padding: 8px;
@@ -171,26 +128,13 @@ body.dark-mode #history-list li:hover {
     background-color: #507d7a44;
     color: #fff;
     font-weight: bold;
-    background-color: #507d7a44;
-    color: #fff;
-    font-weight: bold;
     transition: all 0.1s ease-in-out;
 }
 
 body.dark-mode #toggle-history-button {
     background-color: #507d7a00;
     color: #8cb4ab;
-    background-color: #507d7a00;
-    color: #8cb4ab;
     text-align: right;
-    padding: 8px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-body.dark-mode #toggle-history-button:hover {
-    background-color: #054d4d00;
-    font-size: 14pt;
     padding: 8px;
     border-radius: 4px;
     cursor: pointer;
@@ -204,24 +148,15 @@ body.dark-mode #toggle-history-button:hover {
 body.dark-mode .left-side-bar {
     background-color: #021e1c;
     color: #8cb4ab;
-    background-color: #021e1c;
-    color: #8cb4ab;
 }
 
 body.dark-mode .history-date {
-    color: #8cb4ab;
     color: #8cb4ab;
 }
 
 body.dark-mode input,
 body.dark-mode select,
 body.dark-mode button {
-    background-color: #1c1c1c;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    outline: none;
     background-color: #1c1c1c;
     color: #fff;
     border: none;
