@@ -1,35 +1,29 @@
-.loading-animation {
+.loading-container {
+    display: flex;
+    align-items: center;
+}
+
+.loading-animations {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 10%;
     left: 90%;
-    width: 100vw;
-    height: 100vh;
+    width: 200px;
+    height: 200px;
     background-color: rgba(255, 255, 255, 0);
     /* Optional: Add a semi-transparent background */
-    z-index: 9999;
-    transform-style: preserve-3d;
-    /* Add this property for 3D transformations */
-}
+    z-index: 9999999;
 
-
-/* loading animation */
-
-.loading-container {
-    display: flex;
-    align-items: center;
-    transform: rotate(90deg);
-    /* Rotate the animation 90 degrees */
 }
 
 .dot {
-    width: 18px;
-    height: 18px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #078080;
-    margin: 0 4px;
+    margin-right: 4px;
     animation: wave 1.5s ease-in-out infinite;
 }
 
@@ -44,7 +38,7 @@
 }
 
 .dot:nth-child(4) {
-    background-color: #07808060;
+    background-color: #044d4d73(221, 100%, 50%, 0.376);
     animation-delay: -0.6s;
 }
 

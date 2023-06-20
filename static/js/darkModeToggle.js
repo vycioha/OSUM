@@ -1,26 +1,36 @@
-document.querySelector('#darkModeButton').addEventListener('click', function() {
+// Function to toggle dark mode
+function toggleDarkMode() {
+    var darkModeButton = document.querySelector('#darkModeButton');
+    var isDarkMode = document.body.classList.contains('dark-mode');
+  
+    // Toggle dark mode class
     document.body.classList.toggle('dark-mode');
-    // Switch the icon
-    if (this.classList.contains('fas') && this.classList.contains('fa-moon')) {
-        this.classList.remove('fa-moon');
-        this.classList.add('fa-sun');
+  
+    // Toggle the icon
+    if (isDarkMode) {
+      darkModeButton.classList.remove('fa-sun');
+      darkModeButton.classList.add('fa-moon');
     } else {
-        this.classList.remove('fa-sun');
-        this.classList.add('fa-moon');
+      darkModeButton.classList.remove('fa-moon');
+      darkModeButton.classList.add('fa-sun');
     }
-
+  
     // Update dark mode status in localStorage
     if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled');
+      localStorage.setItem('darkMode', 'enabled');
     } else {
-        localStorage.setItem('darkMode', 'disabled');
+      localStorage.setItem('darkMode', 'disabled');
     }
-});
-
-// On page load, check if dark mode is enabled in localStorage
-if (localStorage.getItem('darkMode') === 'enabled') {
+  }
+  
+  // Event listener for dark mode button
+  document.querySelector('#darkModeButton').addEventListener('click', toggleDarkMode);
+  
+  // On page load, check if dark mode is enabled in localStorage
+  if (localStorage.getItem('darkMode') === 'enabled') {
     document.body.classList.add('dark-mode');
     var darkModeButton = document.querySelector('#darkModeButton');
     darkModeButton.classList.remove('fa-moon');
     darkModeButton.classList.add('fa-sun');
-}
+  }
+  

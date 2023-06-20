@@ -5,7 +5,7 @@ document
 
         let softwareInput = document.getElementById("software-input").value;
 
-        document.getElementById("loading-animation").style.display = "block";
+        document.getElementById("loading-animations").style.display = "block";
 
         // Call your backend with the software name, update the CPE dropdown when data returns
         fetch("http://localhost:5000/api/v1/cpe_search?keyword=" + softwareInput)
@@ -39,7 +39,7 @@ document
                 }
 
                 // Hide the loading message after data is loaded
-                document.getElementById("loading-animation").style.display = "none";
+                document.getElementById("loading-animations").style.display = "none";
             })
             .catch((error) => {
                 // Handle any errors during the fetch operation
