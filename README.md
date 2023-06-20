@@ -11,6 +11,7 @@ OSUM is a web-based application that assists users in identifying known software
 - Displays known vulnerabilities in a table, including the CVE ID, vulnerability type, and CVSS Rating.
 - Allows vulnerabilities to be sorted by risk rating or release date.
 - Provides vulnerability type suggestions directly from their descriptions (`dropdownOptions.js` can be updated to add more options and aliases).
+- The implemented "append" option allows multiple software to be displayed in the same table.
 - Maintains a searchable history for easy reference (uses LocalStorage).
 
 ## Getting Started
