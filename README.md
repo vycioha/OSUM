@@ -28,7 +28,7 @@ cd OSUM
 pip install -r requirements.txt
 ```
 Then, you can start the application by running the `run.py` script:
-```python3
+```yaml
 >python run.py
   ___   ____   _   _  __  __  ___ 
  / _ \ / ___| | | | ||  \/  ||__ \
