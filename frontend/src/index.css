@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body, input, button, textarea, select {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure proper color mode transitions */
+.chakra-ui-dark {
+  color-scheme: dark;
+}
+
+.chakra-ui-light {
+  color-scheme: light;
+} 
