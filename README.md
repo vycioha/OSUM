@@ -1,5 +1,4 @@
-# OSUM - Open Source Vulnerability Management Tool
-*Outdated Software • Updates Missing*
+# OSUM - Outdated Software • Updates Missing
 
 OSUM is a comprehensive tool for analyzing and tracking Common Vulnerabilities and Exposures (CVEs) and Common Platform Enumeration (CPE) data. It provides an intuitive interface to search, analyze, and export vulnerability information.
 
