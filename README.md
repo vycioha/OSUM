@@ -12,6 +12,10 @@ OSUM is a comprehensive tool for analyzing and tracking Common Vulnerabilities a
 - **Responsive Interface**: Built with Chakra UI for a modern and responsive experience
 - **CVSS Visualization**: Color-coded scores for easy severity identification
 
+## Screenshot
+
+![OSUM Application Screenshot](./Screencap.png)
+
 ## Installation
 
 ### Prerequisites
