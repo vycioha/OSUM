@@ -1,5 +1,4 @@
-# OSUM - Open Source Vulnerability Management Tool
-*Outdated Software • Updates Missing*
+# OSUM - Outdated Software • Updates Missing
 
 OSUM is a comprehensive tool for analyzing and tracking Common Vulnerabilities and Exposures (CVEs) and Common Platform Enumeration (CPE) data. It provides an intuitive interface to search, analyze, and export vulnerability information.
 
@@ -25,7 +24,7 @@ OSUM is a comprehensive tool for analyzing and tracking Common Vulnerabilities a
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/osum.git
+   git clone https://github.com/vycioha/OSUM.git
    cd osum
    ```
 
@@ -88,4 +87,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.    test
+This project is licensed under the MIT License - see the LICENSE file for details.
