@@ -1098,10 +1098,10 @@ export const ResultsStep: React.FC<ResultsStepProps> = ({
       cveId: cve.cveId,
       cveUrl: `https://nvd.nist.gov/vuln/detail/${cve.cveId}`,
       description: descriptions[cve.cveId] || cve.description,
-      cvssScore: `${cve.cvssScore.toFixed(1)} - ${getRiskInfo(cve.cvssScore).label}`,
-      vectorString: showVectorString ? cve.vectorString : undefined
+      cvssScore: cve.cvssScore !== null ? cve.cvssScore.toFixed(1) : 'N/A',
+      vectorString: cve.vectorString || ''
     }));
-
+    
     exportAsExcel(tableData, 'vulnerability-results');
   };
 
@@ -2594,7 +2594,7 @@ export const ResultsStep: React.FC<ResultsStepProps> = ({
                     icon={<FiGrid />}
                     isDisabled={isExporting}
                   >
-                    Download as Excel
+                    Download as CSV
                   </MenuItem>
                 </MenuList>
               </Menu>

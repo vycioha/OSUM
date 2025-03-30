@@ -99,12 +99,8 @@ export const MultiStepForm: React.FC = () => {
     window.addEventListener('security_event', handleSecurityEvent);
     window.addEventListener('history_loaded', handleHistoryLoaded as EventListener);
     
-    // Listen for storage changes to update the badge
-    window.addEventListener('storage', () => {
-      // The UserBadge component will handle its own state,
-      // this just forces a re-render of the parent component
-      forceUpdate();
-    });
+    // Listen for storage changes
+    window.addEventListener('storage', forceUpdate);
 
     return () => {
       window.removeEventListener('security_event', handleSecurityEvent);
@@ -592,7 +588,6 @@ export const MultiStepForm: React.FC = () => {
           </Heading>
         </Box>
         
-        {/* UserBadge will render nothing when !hasBadge, so it doesn't affect layout */}
         <UserBadge />
       </Box>
 

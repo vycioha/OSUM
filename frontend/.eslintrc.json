@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "plugins": [
+    "unused-imports",
+    "import"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "no-unused-expressions": "warn",
+    "no-unused-labels": "warn",
+    "react/jsx-uses-vars": "warn",
+    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ],
+    "import/no-unused-modules": [
+      "warn",
+      {
+        "unusedExports": true
+      }
+    ],
+    "no-unreachable": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    }
+  ]
+} 

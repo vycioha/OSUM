@@ -18,7 +18,6 @@ import {
 import { keyframes } from '@emotion/react';
 import { FiTerminal } from 'react-icons/fi';
 
-// Use same constant as UserBadge and MatrixRain components
 const USER_ACHIEVEMENT_KEY = 'usr_xp_lvl';
 
 // Blinking cursor animation

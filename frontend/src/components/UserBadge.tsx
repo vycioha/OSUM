@@ -6,7 +6,6 @@ import {
   useColorMode
 } from '@chakra-ui/react';
 
-// Using an obscure key name to avoid giving away the easter egg
 const USER_ACHIEVEMENT_KEY = 'usr_xp_lvl';
 
 export const UserBadge: React.FC = () => {
@@ -18,14 +17,12 @@ export const UserBadge: React.FC = () => {
   const animationRef = useRef<number | null>(null);
   const typingIntervalRef = useRef<number | null>(null);
   
-  // Check if user has earned the badge
   useEffect(() => {
     const checkUserAchievement = () => {
       const achievementLevel = localStorage.getItem(USER_ACHIEVEMENT_KEY);
       setHasBadge(achievementLevel === '1');
     };
     
-    // Check on load and when storage changes
     checkUserAchievement();
     window.addEventListener('storage', checkUserAchievement);
     
@@ -34,7 +31,6 @@ export const UserBadge: React.FC = () => {
     };
   }, []);
   
-  // Cursor blinking effect
   useEffect(() => {
     if (!hasBadge) return;
     
@@ -47,19 +43,16 @@ export const UserBadge: React.FC = () => {
     return () => clearInterval(blinkInterval);
   }, [hasBadge, isTyping]);
   
-  // Text typing effect
   useEffect(() => {
     if (!hasBadge) return;
     
     const runTypingAnimation = () => {
       setIsTyping(true);
-      // Initialize with the prompt character only
       setText('>');
       
       const fullText = '1337 h4x0r';
       let currentIndex = 0;
       
-      // Function to handle typing of each character
       const typeNextChar = () => {
         if (currentIndex < fullText.length) {
           setText('>'+fullText.substring(0, currentIndex+1));
@@ -67,20 +60,16 @@ export const UserBadge: React.FC = () => {
           typingIntervalRef.current = window.setTimeout(typeNextChar, 150);
         } else {
           setIsTyping(false);
-          // Wait for a few seconds with the completed text before resetting
           animationRef.current = window.setTimeout(() => {
             setText('>_');
-            // After resetting to just cursor, wait before starting again
             animationRef.current = window.setTimeout(runTypingAnimation, 1500);
           }, 3000);
         }
       };
       
-      // Start the typing process after a slight delay
       typingIntervalRef.current = window.setTimeout(typeNextChar, 150);
     };
     
-    // Start typing effect after a delay
     animationRef.current = window.setTimeout(runTypingAnimation, 1000);
     
     return () => {
@@ -93,11 +82,8 @@ export const UserBadge: React.FC = () => {
     };
   }, [hasBadge]);
   
-  // Don't render anything if user doesn't have the badge
   if (!hasBadge) return null;
   
-  // Calculate width based on text length to avoid jumping
-  // Add extra padding to ensure characters are fully visible
   const width = text === '>_' ? '50px' : text === '>' ? '45px' : `${Math.max(90, text.length * 11)}px`;
   
   return (

@@ -6,9 +6,7 @@ const USER_ACHIEVEMENT_KEY = 'usr_xp_lvl';
 
 /**
  * MatrixRain component renders a Matrix-style digital rain effect.
- * Only appears when the user has unlocked the "1337 h4x0r" badge.
- * The effect is a subtle background with green characters falling down the screen,
- * creating a hacker-like aesthetic.
+ * The effect is a subtle background with green characters falling down the screen.
  */
 const MatrixRain: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

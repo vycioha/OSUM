@@ -1,7 +1,6 @@
 import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import * as XLSX from 'xlsx';
 
 interface TableRow {
   software: string;
@@ -231,34 +230,41 @@ export const exportAsPDF = (data: TableRow[], fileName: string, showVectorString
 };
 
 export const exportAsExcel = (data: TableRow[], fileName: string) => {
-  // Create worksheet data
-  const wsData = data.map(row => ({
-    'Software': row.software,
-    'CVE ID': row.cveId,
-    'Description': row.description,
-    'CVSS Score': row.cvssScore,
-    ...(row.vectorString ? { 'Vector String': row.vectorString } : {})
-  }));
-
-  // Create workbook and worksheet
-  const wb = XLSX.utils.book_new();
-  const ws = XLSX.utils.json_to_sheet(wsData);
-
-  // Set column widths
-  const colWidths = [
-    { wch: 30 }, // Software
-    { wch: 15 }, // CVE ID
-    { wch: 60 }, // Description
-    { wch: 15 }, // CVSS Score
-    { wch: 40 }  // Vector String (if present)
-  ];
-  ws['!cols'] = colWidths;
-
-  // Add worksheet to workbook
-  XLSX.utils.book_append_sheet(wb, ws, 'Vulnerabilities');
-
-  // Generate Excel file
-  XLSX.writeFile(wb, `${fileName}.xlsx`);
+  // Create CSV content
+  const headers = ['Software', 'CVE ID', 'Description', 'CVSS Score', 'Vector String'];
+  let csvContent = headers.join(',') + '\n';
+  
+  // Add data rows
+  data.forEach(row => {
+    // Properly escape fields for CSV
+    const escapeCsvField = (field: string) => {
+      // If the field contains commas, quotes, or newlines, wrap it in quotes and escape existing quotes
+      if (field && (field.includes(',') || field.includes('"') || field.includes('\n'))) {
+        return `"${field.replace(/"/g, '""')}"`;
+      }
+      return field || '';
+    };
+    
+    const rowData = [
+      escapeCsvField(row.software),
+      escapeCsvField(row.cveId),
+      escapeCsvField(row.description),
+      escapeCsvField(row.cvssScore),
+      escapeCsvField(row.vectorString || '')
+    ];
+    csvContent += rowData.join(',') + '\n';
+  });
+  
+  // Create download link for CSV
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  const url = URL.createObjectURL(blob);
+  link.setAttribute('href', url);
+  link.setAttribute('download', `${fileName}.csv`);
+  link.style.visibility = 'hidden';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 export const copyToWordTable = async (tableData: any[]) => {

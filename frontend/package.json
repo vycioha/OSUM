@@ -7,27 +7,19 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^20.0.0",
     "@types/react": "^18.2.61",
-    "@types/react-beautiful-dnd": "^13.1.8",
     "@types/react-dom": "^18.2.19",
+    "fflate": "^0.8.2",
     "framer-motion": "^11.0.5",
     "html2canvas": "^1.4.1",
-    "jspdf": "^3.0.0",
+    "jspdf": "^3.0.1",
     "jspdf-autotable": "^5.0.2",
     "react": "^18.2.0",
-    "react-beautiful-dnd": "^13.1.1",
-    "react-colorful": "^5.6.1",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-refresh": "^0.14.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-    "xlsx": "^0.18.5"
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,8 +27,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint \"src/**/*.{ts,tsx}\" --config .eslintrc.json",
-    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --config .eslintrc.json --fix"
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "find-unused": "eslint src --ext .ts,.tsx"
   },
   "eslintConfig": {
     "extends": [
@@ -57,11 +50,23 @@
     ]
   },
   "devDependencies": {
+    "@types/jspdf": "^1.3.3",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "react-refresh": "^0.17.0"
+    "eslint-plugin-unused-imports": "^3.1.0"
+  },
+  "resolutions": {
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.31",
+    "dompurify": "^3.2.4"
+  },
+  "overrides": {
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.31",
+    "dompurify": "^3.2.4"
   }
 }
