@@ -40,7 +40,7 @@ OSUM is a tool for analyzing and tracking Common Vulnerabilities and Exposures (
 
 3. Install backend dependencies:
    ```
-   \odum> cd backend
+   \osum> cd backend
    pip install flask flask-cors requests
    ```
 
