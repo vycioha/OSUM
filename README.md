@@ -1,6 +1,6 @@
 # OSUM - Outdated Software • Updates Missing
 
-OSUM is a comprehensive tool for analyzing and tracking Common Vulnerabilities and Exposures (CVEs) and Common Platform Enumeration (CPE) data. It provides an intuitive interface to search, analyze, and export vulnerability information.
+OSUM is a tool for analyzing and tracking Common Vulnerabilities and Exposures (CVEs) and Common Platform Enumeration (CPE) data. It provides an intuitive interface to search, analyze, and export vulnerability information.
 
 ## Features
 
@@ -34,13 +34,13 @@ OSUM is a comprehensive tool for analyzing and tracking Common Vulnerabilities a
 
 2. Install frontend dependencies:
    ```
-   cd frontend
-   npm install
+   \osum> cd frontend
+   \osum\frontend> npm install --legacy-peer-deps
    ```
 
 3. Install backend dependencies:
    ```
-   cd ../backend
+   \odum> cd backend
    pip install flask flask-cors requests
    ```
 
@@ -49,7 +49,7 @@ OSUM is a comprehensive tool for analyzing and tracking Common Vulnerabilities a
 The easiest way to run both the frontend and backend together is using the provided server script:
 
 ```
-node server.js
+\osum> node server.js
 ```
 
 Alternatively, you can run them separately:
